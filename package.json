@@ -1,0 +1,11 @@
+{
+  "name": "uni-mall",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/LauChaug/uni-mall.git",
+  "author": "LiuChang <lcc1875@163.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@escook/request-miniprogram": "^0.2.1"
+  }
+}
