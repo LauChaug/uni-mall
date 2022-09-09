@@ -1,5 +1,10 @@
 <template>
 	<view>
+		<!-- 默认样式 -->
+		<my-search @click.native = "gotoSearch"></my-search>
+		<!-- 自定义props属性 -->
+		<!-- <my-search :bgcolor="'red'" :radius="5"></my-search> -->
+		
 		<view class="scroll-view-container">
 			<!-- 左侧滑动区域 -->
 			<scroll-view class="left-scroll-view" scroll-y :style="{height:wh + 'px'}">
@@ -45,7 +50,7 @@
 		},
 		onLoad() {
 			const sysInfo =  uni.getSystemInfoSync()
-			this.wh = sysInfo.windowHeight
+			this.wh = sysInfo.windowHeight - 50
 			this.getCateList()
 		},
 		methods:{
@@ -67,6 +72,11 @@
 			goToGoodsList(item3){
 				uni.navigateTo({
 					url:"/subpkg/goods_list/goods_list?cid=" + item3.cat_id
+				})
+			},
+			gotoSearch(){
+				uni.navigateTo({
+					url:'/subpkg/search/search'
 				})
 			}
 		}

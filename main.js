@@ -2,6 +2,8 @@
 // #ifndef VUE3
 import Vue from 'vue'
 import App from './App'
+import mySearch from './@/components/my-search/my-search.vue'
+Vue.component('my-search',mySearch)
 
 // 定义提示消息!
 uni.$showMsg = function(title='数据加载失败！',duration=1500){
