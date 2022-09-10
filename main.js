@@ -26,7 +26,7 @@ $http.beforeRequest = function(options){
 	})
 }
 // 请求根路径	
-$http.baseUrl = 'http://api-ugo-web.itheima.net'
+$http.baseUrl = 'https://api-ugo-web.itheima.net'
 // 响应拦截器
 $http.afterRequest = function(){
 	uni.hideLoading()
