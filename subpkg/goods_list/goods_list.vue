@@ -36,7 +36,7 @@
 				this.isLoading = false
 				cb && cb()
 				if(res.meta.status !== 200) return uni.$showMsg()
-				console.log(res);
+				// console.log(res);
 				this.goodsList = [...this.goodsList, ...res.message.goods]
 				this.total = res.message.total
 			},
