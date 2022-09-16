@@ -31,6 +31,7 @@
 </template>
 
 <script>
+	import {mapState , mapMutations, mapGetters} from 'vuex'
 	export default {
 		data() {
 			return {
@@ -45,7 +46,7 @@
 					{
 						icon:'cart',
 						text:'购物车',
-						info:2
+						info:0
 					}
 				],
 				buttonGroup:[
@@ -59,18 +60,35 @@
 						backgroundColor:'#ffa200',
 						color:'#fff'
 					}
-				]
+				],
 			};
 		},
+		computed:{
+			...mapState('m_cart',[]),
+			...mapGetters('m_cart',['total'])
+		},
+		watch:{
+			total:{
+				immediate:true,
+				handler(newVal){
+					const findResult = this.options.find(x => x.text === '购物车')
+					if(findResult){
+						console.log(findResult);
+						findResult.info = newVal
+					}
+				}
+			}
+		},
 		onLoad(options){
-			console.log(options);
+			// console.log(options);
 			let goods_id = options.goods_id
 			this.getGoodsDetail(goods_id)
 		},
 		methods:{
+			...mapMutations('m_cart',['addToCart']),
 			async getGoodsDetail(goods_id){
 				const {data:res} = await uni.$http.get('/api/public/v1/goods/detail',{goods_id})
-				console.log(res);
+				// console.log(res);
 				if(res.meta.status !== 200) return uni.$showMsg('获取详情失败！')
 				res.message.goods_introduce = res.message.goods_introduce.replace(/<img /g,'<img style="display:block;" ').replace(/webp/g,'jpg')
 				this.goods_info = res.message
@@ -82,11 +100,24 @@
 				})
 			},
 			onClick(e){
-				console.log(e);
+				// console.log(e);
 				if(e.content.text === '购物车'){
 					uni.switchTab({
 						url:'/pages/cart/cart'
 					})
+				}
+			},
+			buttonClick(e){
+				if(e.content.text === '加入购物车'){
+					const goods = {
+						goods_id: this.goods_info.goods_id,
+						goods_name: this.goods_info.goods_name,
+						goods_price: this.goods_info.goods_price,
+						goods_count: 1,
+						goods_small_logo: this.goods_info.goods_small_logo,
+						goods_state: true
+					}
+					this.addToCart(goods)
 				}
 			}
 		}

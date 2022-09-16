@@ -1,6 +1,7 @@
 
 // #ifndef VUE3
 import Vue from 'vue'
+import store from '@/store/store.js'
 import App from './App'
 import mySearch from './@/components/my-search/my-search.vue'
 Vue.component('my-search',mySearch)
@@ -36,7 +37,8 @@ Vue.config.productionTip = false
 App.mpType = 'app'
 
 const app = new Vue({
-    ...App
+    ...App,
+		store
 })
 app.$mount()
 // #endif
