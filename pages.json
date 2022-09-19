@@ -13,7 +13,8 @@
             "path" : "pages/cate/cate",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "分类",
+								"navigationBarTextStyle": "white",
                 "enablePullDownRefresh": false
             }
             
@@ -22,7 +23,8 @@
             "path" : "pages/cart/cart",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "购物车",
+								"navigationBarTextStyle": "white",
                 "enablePullDownRefresh": false
             }
             
@@ -31,7 +33,8 @@
             "path" : "pages/my/my",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "我的",
+								"navigationBarTextStyle": "white",
                 "enablePullDownRefresh": false
             }
             
@@ -44,7 +47,8 @@
                     "path" : "goods_detail/goods_detail",
                     "style" :                                                                                    
                 {
-                    "navigationBarTitleText": "",
+                    "navigationBarTitleText": "商品详情",
+								"navigationBarTextStyle": "white",
                     "enablePullDownRefresh": false
                 }
                 
@@ -53,7 +57,8 @@
                     "path" : "goods_list/goods_list",
                     "style" :                                                                                    
                 {
-                    "navigationBarTitleText": "",
+                    "navigationBarTitleText": "商品列表",
+										"navigationBarTextStyle": "white",
                     "enablePullDownRefresh": false,
 										"onReachBottomDistance": 150,
 										"enablePullDownRefresh":true,
@@ -65,7 +70,8 @@
                     "path" : "search/search",
                     "style" :                                                                                    
                 {
-                    "navigationBarTitleText": "",
+                    "navigationBarTitleText": "搜索",
+										"navigationBarTextStyle": "white",
                     "enablePullDownRefresh": false
                 }
                 

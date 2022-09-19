@@ -25,6 +25,13 @@ $http.beforeRequest = function(options){
 	uni.showLoading({
 		title:'数据加载中....'
 	})
+	console.log(options,store);
+	// 判断当前请求的是否为有权限的接口
+	if(options.url.indexOf('/my') !== -1){
+		options.header = {
+			Authorization: store.state.m_user.token
+		}
+	}
 }
 // 请求根路径	
 $http.baseUrl = 'https://api-ugo-web.itheima.net'
