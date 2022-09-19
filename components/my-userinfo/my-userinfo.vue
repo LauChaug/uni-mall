@@ -58,7 +58,7 @@
 					<uni-icons type="arrowright" size="mini"></uni-icons>
 				</view>
 				<view class="panel-list-item">
-					<text>练习客服</text>
+					<text>联系客服</text>
 					<uni-icons type="arrowright" size="mini"></uni-icons>
 				</view>
 				<view class="panel-list-item" @click="logout">

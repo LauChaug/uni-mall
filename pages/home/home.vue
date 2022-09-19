@@ -2,6 +2,7 @@
 	<view>
 		<view class="search-box">
 			<my-search @click.native ="gotoSearch"></my-search>
+			<button type="">hehe</button>
 		</view>
 		<!-- 轮播图区域 -->
 		<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="500" circular="true">
@@ -31,9 +32,11 @@
 					</navigator>
 					<!-- 右侧4张小图片区域 -->
 					<view class="right-img-box">
-						<navigator class="right-img-item" v-for="(item2,i2) in item.product_list" :key="i2" v-if="i2 !== 0" :url="item2.url">
-							<image :src="item2.image_src" :style="{width:item2.image_width + 'rpx'}" mode="widthFix"></image>
-						</navigator> 
+						<template  v-for="(item2,i2) in item.product_list"> 
+							<navigator class="right-img-item" :key="i2" v-if="i2 !== 0" :url="item2.url">
+								<image :src="item2.image_src" :style="{width:item2.image_width + 'rpx'}" mode="widthFix"></image>
+							</navigator>
+						</template> 
 					</view>
 				</view>
 			</view>

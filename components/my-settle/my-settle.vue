@@ -93,7 +93,7 @@
 				if(res.meta.status !== 200) return uni.$showMsg('创建订单失败！')
 				const orderNumber = res.message.order_number
 				
-				const {data: res2} = await uni.$http.post('/api/public/v1/my/orders/req_unifiedorder',order_number:orderNumber)
+				const {data: res2} = await uni.$http.post('/api/public/v1/my/orders/req_unifiedorder',{order_number:orderNumber})
 				if(res2.meta.status !== 200) return uni.$showMsg('预付订单生成失败！')
 				const payInfo = res2.message.pay
 				
